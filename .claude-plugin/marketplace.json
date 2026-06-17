@@ -1,0 +1,42 @@
+{
+  "name": "git-skills",
+  "owner": {
+    "name": "flownrt"
+  },
+  "description": "Curated, general-purpose Agent Skills you can install by name.",
+  "plugins": [
+    {
+      "name": "study",
+      "source": "./",
+      "strict": false,
+      "skills": ["./general/study"],
+      "description": "A personal tutor that helps you learn a subject deeply across many sessions, building a persistent workspace (goal, sources, interactive lessons, progress records, cheat sheets) so learning compounds instead of restarting each time.",
+      "license": "Apache-2.0",
+      "author": {
+        "name": "flownrt"
+      }
+    },
+    {
+      "name": "cross-examine",
+      "source": "./",
+      "strict": false,
+      "skills": ["./general/cross-examine"],
+      "description": "Interrogates you one question at a time to pressure-test a plan or design, surfacing blind spots and hidden assumptions, then compiles a consolidated plan.",
+      "license": "Apache-2.0",
+      "author": {
+        "name": "flownrt"
+      }
+    },
+    {
+      "name": "session-brief",
+      "source": "./",
+      "strict": false,
+      "skills": ["./general/session-brief"],
+      "description": "Distills the current session into a copy-pasteable continuation prompt so a fresh session can resume the work without re-explaining it.",
+      "license": "Apache-2.0",
+      "author": {
+        "name": "flownrt"
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+.DS_Store
+.fuse_hidden*
+*.skill
+.leak-tokens
+CLAUDE.md
+tools/
