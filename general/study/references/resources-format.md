@@ -1,6 +1,6 @@
-# RESOURCES.md format
+# 00-RESOURCES.md format
 
-`RESOURCES.md` is the curated set of trusted material for a subject. Lessons draw their facts from here, not from unaided recall. Real-world judgment comes from the communities listed here. Better five sharp sources than thirty mediocre ones.
+`00-RESOURCES.md` is the curated set of trusted material for a subject. Lessons draw their facts from here, not from unaided recall. Real-world judgment comes from the communities listed here. Better five sharp sources than thirty mediocre ones.
 
 ## Structure
 

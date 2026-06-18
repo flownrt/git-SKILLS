@@ -1,6 +1,6 @@
-# GOAL.md format
+# 00-GOAL.md format
 
-`GOAL.md` sits at the root of the subject directory. It records *why* the user is learning this subject and what success actually looks like. Every later decision – what to teach next, which source to reach for, which exercise to set – should be traceable back to this file.
+`00-GOAL.md` sits at the root of the subject directory. It records *why* the user is learning this subject and what success actually looks like. Every later decision – what to teach next, which source to reach for, which exercise to set – should be traceable back to this file.
 
 ## Template
 

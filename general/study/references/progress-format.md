@@ -1,6 +1,6 @@
 # Progress record format
 
-Progress records live in `progress/` with sequential numbering: `0001-slug.md`, `0002-slug.md`, and so on. Create the directory only when you write the first record.
+Progress records live in `02-progress/` with sequential numbering: `0001-slug.md`, `0002-slug.md`, and so on. Create the directory only when you write the first record.
 
 A progress record captures one thing the user can now demonstrably do, or one piece of prior knowledge they've established. These records are how you decide what to teach next – they mark the floor. Keep them short and decision-grade; they are not a diary.
 
@@ -25,7 +25,7 @@ Add these only when they genuinely earn their place. Most records won't need any
 
 ## Numbering
 
-Scan `progress/` for the highest existing number and add one.
+Scan `02-progress/` for the highest existing number and add one.
 
 ## When to write one
 
@@ -34,7 +34,7 @@ Write a record when any of these is true:
 1. **The user proved real understanding of something non-trivial** – not just saw it, but used it correctly. This raises the floor.
 2. **The user disclosed prior knowledge** – "I already know X." Record it, with the depth they claim, so you don't re-teach it.
 3. **A misconception got corrected** – they believed something wrong and now see why. These are high-value: they predict where related topics will trip them up.
-4. **The goal itself shifted** – learning changed what the user cares about. Cross-link to `GOAL.md` and update it too.
+4. **The goal itself shifted** – learning changed what the user cares about. Cross-link to `00-GOAL.md` and update it too.
 
 ## What does not qualify
 

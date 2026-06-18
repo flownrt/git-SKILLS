@@ -8,15 +8,15 @@ Each subject gets its own directory:
 
 ```
 curricula/<subject-slug>/
-  GOAL.md         # why you're learning this, and what success looks like
-  RESOURCES.md    # curated trusted sources + practice communities
-  lessons/        # numbered, self-contained interactive HTML lessons
-  progress/       # short dated records of what you can now demonstrably do
-  references/    # distilled glossaries, syntax cards, routines for quick lookup
-  PROFILE.md      # your preferences and the tutor's working notes
+  00-GOAL.md       # why you're learning this, and what success looks like
+  00-RESOURCES.md  # curated trusted sources + practice communities
+  00-PROFILE.md    # your preferences and the tutor's working notes
+  01-lessons/      # numbered, self-contained interactive HTML lessons
+  02-progress/     # short dated records of what you can now demonstrably do
+  03-references/   # distilled glossaries, syntax cards, routines for quick lookup
 ```
 
-On every session the tutor reads this state first, so a returning learner is recognized rather than re-onboarded. It teaches at your *learning edge* – the floor comes from what you've already proven (`progress/`), the direction from your `GOAL.md` – and uses spaced review to keep it from fading.
+On every session the tutor reads this state first, so a returning learner is recognized rather than re-onboarded. It teaches at your *learning edge* – the floor comes from what you've already proven (`02-progress/`), the direction from your `00-GOAL.md` – and uses spaced review to keep it from fading.
 
 ## Bundled starter curricula
 
