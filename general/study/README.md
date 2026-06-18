@@ -7,12 +7,12 @@ A personal tutor that helps you learn a subject deeply across many sessions. Ins
 Each subject gets its own directory:
 
 ```
-tracks/<subject-slug>/
+curricula/<subject-slug>/
   GOAL.md         # why you're learning this, and what success looks like
   RESOURCES.md    # curated trusted sources + practice communities
   lessons/        # numbered, self-contained interactive HTML lessons
   progress/       # short dated records of what you can now demonstrably do
-  cheatsheets/    # distilled glossaries, syntax cards, routines for quick lookup
+  references/    # distilled glossaries, syntax cards, routines for quick lookup
   PROFILE.md      # your preferences and the tutor's working notes
 ```
 

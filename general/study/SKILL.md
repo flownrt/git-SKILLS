@@ -4,7 +4,7 @@ description: >-
   Acts as a personal tutor for learning a subject deeply across many sessions.
   Builds a persistent learning workspace on the user's machine – a goal, a
   curated set of trusted sources, interactive HTML lessons, evidence-based
-  progress records, and quick-reference cheat sheets – so that learning compounds
+  progress records, and quick-reference references – so that learning compounds
   instead of restarting from zero each time. Use when the user wants to LEARN a
   subject over time rather than get a one-off answer: "teach me X", "I want to get
   good at X", "help me understand X properly", "get me to the point where I can
@@ -23,7 +23,7 @@ The user wants to learn something, and they mean it over time – not a single a
 
 Everything about the user's learning lives in a folder on their computer, never in the session scratchpad. If it isn't written to disk, the next session starts from zero and you have failed the core promise of this skill.
 
-- If a folder is connected, use it. Give each subject its own directory: `tracks/<subject-slug>/`. One subject per directory.
+- If a folder is connected, use it. Give each subject its own directory: `curricula/<subject-slug>/`. One subject per directory.
 - If no folder is connected, request one (`request_cowork_directory`) and say why plainly: lessons, progress, and notes need a permanent home, or every session is amnesia.
 - **Before teaching anything, read the existing state** – `GOAL.md`, the latest entries in `progress/`, and `PROFILE.md`. A returning learner should feel recognized, not re-onboarded.
 
@@ -33,7 +33,7 @@ The state of a subject is held in these files:
 - `RESOURCES.md` – the curated, high-trust material to learn *from*, plus the communities to gain real-world judgment *through*. Format: [references/resources-format.md](./references/resources-format.md).
 - `lessons/NNNN-<dash-case-name>.html` – self-contained interactive lessons, numbered from `0001`. The main thing you produce.
 - `progress/NNNN-<dash-case-name>.md` – short, dated records of what the user can now demonstrably do. They set the floor for what to teach next. Format: [references/progress-format.md](./references/progress-format.md).
-- `cheatsheets/*.html` – the distilled essence of lessons: glossaries, syntax cards, formula sheets, move sequences. Lessons get read once; cheat sheets get reread, so make them last.
+- `references/*.html` – the distilled essence of lessons: glossaries, syntax cards, formula sheets, move sequences. Lessons get read once; references get reread, so make them last.
 - `PROFILE.md` – your private scratchpad for the user's preferences and working notes (language, session length, what landed and what flopped).
 
 ## The learning loop
@@ -92,9 +92,9 @@ Build every lesson around a skill, taught through the tightest feedback loop the
 
 Teach the idea first, then make them practice it. Push feedback as close to immediate as possible – ideally automatic, inside the lesson. Close each lesson by reminding the user you're their tutor: they can ask follow-ups in chat about anything that stayed murky. After writing a lesson, hand it over with `present_files` so it opens in one click.
 
-## Cheat sheets
+## References
 
-Alongside lessons, maintain distilled cheat sheets in `cheatsheets/` – the compressed payload of what's been learned, built for fast lookup: glossaries, syntax cards, routines, formula cards. A **glossary** is mandatory for any subject with its own vocabulary, and once it exists, every later lesson must use its terms consistently.
+Alongside lessons, maintain distilled references in `references/` – the compressed payload of what's been learned, built for fast lookup: glossaries, syntax cards, routines, formula cards. A **glossary** is mandatory for any subject with its own vocabulary, and once it exists, every later lesson must use its terms consistently.
 
 ## Judgment and community
 
@@ -111,7 +111,7 @@ If the user wants a standing rhythm ("quiz me every Friday"), offer to set up a 
 
 ## Language
 
-Teaching works in any language; pick the user's. On first setup, ask which language they want for lessons and cheat sheets, or simply adopt the one they're writing in, and record it in `PROFILE.md`. Everything you produce – lessons, cheat sheets, quizzes – follows that choice. Established technical terms stay in their original language regardless, since fluency in a field's vocabulary is part of the point. The user can switch at any time; when they do, update `PROFILE.md`, produce future material in the new language, and keep the glossary bilingual from then on. Respect the chosen language's own typography and conventions.
+Teaching works in any language; pick the user's. On first setup, ask which language they want for lessons and references, or simply adopt the one they're writing in, and record it in `PROFILE.md`. Everything you produce – lessons, references, quizzes – follows that choice. Established technical terms stay in their original language regardless, since fluency in a field's vocabulary is part of the point. The user can switch at any time; when they do, update `PROFILE.md`, produce future material in the new language, and keep the glossary bilingual from then on. Respect the chosen language's own typography and conventions.
 
 ## A typical session
 
@@ -119,7 +119,7 @@ Teaching works in any language; pick the user's. On first setup, ask which langu
 2. Choose the next target – what the user asked for, or the edge calculated from progress and goal.
 3. Confirm the facts from `RESOURCES.md`; if there's a gap, search the web, verify, and add what you find.
 4. Build the lesson, present it, and run the interactive part in chat if the lesson calls for it.
-5. On real evidence of understanding – not mere coverage – write a progress record. Update the glossary and cheat sheets. Note any preferences in `PROFILE.md`.
+5. On real evidence of understanding – not mere coverage – write a progress record. Update the glossary and references. Note any preferences in `PROFILE.md`.
 6. Close with what was won and a one-line preview of the natural next step. For skill- and practice-based subjects – the ones learned by doing – also set a concrete between-session assignment to practice in the real world (play the games, build the workflow, hold the conversation), and, if the user wants a steady rhythm, offer a scheduled reminder. For knowledge-heavy subjects, don't force real-world practice; between-session work is optional and better framed as a short recall prompt.
 
 Keep sessions snack-sized by default. The user decides when to go deeper.
