@@ -2,21 +2,26 @@
 
 A personal tutor that helps you learn a subject deeply across many sessions. Instead of one-shot answers, `study` builds a persistent workspace on your machine, grounds every lesson in trusted sources and your real goal, and makes you *prove* understanding before moving on – so your learning compounds instead of restarting each time.
 
+## Recommended setup
+
+`study` keeps its workspace as real files on disk and reads them back every session, so it works best where Claude has folder access and can persist work between sessions – **Claude Code** or **Cowork**. The tutoring, curriculum reasoning, and hand-built interactive lessons reward a strong model: **Opus 4.8** with **Max** (or at least **Medium**) reasoning is the recommended default.
+
 ## How it works
 
 Each subject gets its own directory:
 
 ```
 curricula/<subject-slug>/
-  00-GOAL.md       # why you're learning this, and what success looks like
-  00-RESOURCES.md  # curated trusted sources + practice communities
-  00-PROFILE.md    # your preferences and the tutor's working notes
-  01-lessons/      # numbered, self-contained interactive HTML lessons
-  02-progress/     # short dated records of what you can now demonstrably do
-  03-references/   # distilled glossaries, syntax cards, routines for quick lookup
+  00-GOAL.md        # why you're learning this, and what success looks like
+  00-RESOURCES.md   # curated trusted sources + practice communities
+  00-PROFILE.md     # your preferences and the tutor's working notes
+  01-lessons/       # numbered, self-contained interactive HTML lessons
+  02-progress/      # short dated records of what you can now demonstrably do
+  03-references/    # distilled glossaries, syntax cards, routines for quick lookup
+  00-DASHBOARD.html # optional progress map of the subject (solid / developing / shaky)
 ```
 
-On every session the tutor reads this state first, so a returning learner is recognized rather than re-onboarded. It teaches at your *learning edge* – the floor comes from what you've already proven (`02-progress/`), the direction from your `00-GOAL.md` – and uses spaced review to keep it from fading.
+On every session the tutor reads this state first, so a returning learner is recognized rather than re-onboarded. It teaches at your *learning edge* – the floor comes from what you've already proven (`02-progress/`), the direction from your `00-GOAL.md` – and uses spaced review to keep it from fading. Once a subject has a few progress records, the tutor can regenerate `00-DASHBOARD.html`: an at-a-glance map of every topic as solid, developing, shaky, or not started.
 
 ## Bundled starter curricula
 
