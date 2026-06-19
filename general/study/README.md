@@ -20,7 +20,7 @@ On every session the tutor reads this state first, so a returning learner is rec
 
 ## Bundled starter curricula
 
-`study` ships with two ready-made curricula in [`assets/curricula/`](./assets/curricula), built from vetted sources and deliberately different in shape:
+`study` ships with three ready-made curricula in [`assets/curricula/`](./assets/curricula), built from vetted sources and deliberately different in shape:
 
 - **[`llm-architecture.md`](./assets/curricula/llm-architecture.md)** – a three-tier *fluency map* (Mechanics → Build craft → Open debates) for understanding how large language models actually work, for someone who needs to hold their own in technical discussions. *Knowledge-heavy*: concepts to understand, each with a self-check.
 - **[`chess.md`](./assets/curricula/chess.md)** – a *competency ladder* (board safety → tactics → endgames & planning) from "knows the moves" to solid intermediate. *Skills-heavy*: each rung is a thing you must be able to *do*, paired with a drill and an observable "you've got it when…" benchmark.

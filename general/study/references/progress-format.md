@@ -22,6 +22,7 @@ Add these only when they genuinely earn their place. Most records won't need any
 - **Status** (`active` | `superseded by 0007`) – use when a later, deeper understanding replaces an earlier one.
 - **Evidence** – how the user proved it: a question answered cold, an exercise completed, experience cited. Worth noting when the claim might be revisited.
 - **Unlocks** – what this makes teachable next, when that isn't obvious.
+- **Next review** (`YYYY-MM-DD`) – *only* for subjects whose curriculum opts into per-item spacing (discrete, fast-fading facts like a language's vocabulary or anatomy). One date the tutor surfaces when it comes due, expanding on each success (e.g. 1 day → 3 days → 1 week → 1 month). Most subjects never use this; their retrieval is the scenario review quiz or real-world practice, not a schedule.
 
 ## Numbering
 
