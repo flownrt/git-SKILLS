@@ -16,7 +16,7 @@ These skills work with any agent that supports Agent Skills, especially Claude C
    - **Claude Code** – copy a skill's folder into `~/.claude/skills/` (every project) or a project's `.claude/skills/` (that project only). Picked up the same session, no restart.
    - **Cowork** – zip the skill's folder, then add the archive under Settings → Capabilities:
      ```
-     cd general && zip -r study.skill study
+     cd general-SKILLS && zip -r study.skill study
      ```
 3. **Use it** – the agent triggers a skill automatically when your request matches its description, or you can invoke it by name.
 
@@ -24,8 +24,8 @@ These skills work with any agent that supports Agent Skills, especially Claude C
 
 Grouped by category; each category's README indexes the skills inside it.
 
-- [`general/`](./general) – broadly useful, domain-agnostic skills.
-- [`legal/`](./legal) – legal workflows.
+- [`general-SKILLS/`](./general-SKILLS) – broadly useful, domain-agnostic skills.
+- [`legal-SKILLS/`](./legal-SKILLS) – legal workflows.
 
 ## License
 

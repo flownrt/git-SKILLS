@@ -150,6 +150,6 @@ The architecture isn't frozen. Newer designs such as **multi-head latent attenti
 2. **C1, C2, C6** – context engineering, retrieval, and evaluation: the three pillars of the systems-builder craft.
 3. **C7, C8** – inference phases and economics. This is where you start sounding like an architect rather than a user.
 4. **M9, M10, M11, D1, D4** – post-training, scaling, reasoning, and their discontents: the debates experts actually have.
-5. **Remaining W concepts** as your projects touch them; **D6, D7, D8, D11** before any conversation about infrastructure, cost, or hardware strategy.
+5. **Remaining C concepts** as your projects touch them; **D6, D7, D8, D11** before any conversation about infrastructure, cost, or hardware strategy.
 
 **Self-check, per concept.** For each one, can you (a) explain it in two sentences, (b) name the design decision it governs, and (c) state the strongest objection to the mainstream view? Yes across all three tiers means you're fluent – you can follow and contribute to the conversation, not just nod along.

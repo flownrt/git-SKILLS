@@ -90,7 +90,7 @@ dl.gloss dd{margin:.2rem 0 0;font-size:.88rem;color:var(--ink)}
 
 /* progress dashboard */
 .dash{font-family:var(--sans);margin:.5rem 0}
-.dash .row{display:grid;grid-template-columns:9rem 1fr 6.4rem;align-items:center;gap:.7rem;margin:.5rem 0}
+.dash .row{display:grid;grid-template-columns:15rem 1fr 6.4rem;align-items:center;gap:.7rem;margin:.5rem 0}
 .dash .t{font-size:.85rem;font-weight:600}
 .meter{height:8px;background:color-mix(in srgb,var(--ink) 9%,var(--paper));border-radius:99px;overflow:hidden}
 .meter>i{display:block;height:100%;border-radius:99px;background:var(--accent)}
@@ -132,7 +132,7 @@ input[type=range]{accent-color:var(--accent);width:100%}
 .handoff b{color:var(--ink)}
 .src{font-family:var(--sans);font-size:.72rem;color:var(--muted);margin-top:1.4rem;border-top:1px solid var(--border);padding-top:.7rem}
 
-@media(max-width:560px){.cols{grid-template-columns:1fr}.dash .row{grid-template-columns:7rem 1fr 5.4rem}}
+@media(max-width:560px){.cols{grid-template-columns:1fr}.dash .row{grid-template-columns:10rem 1fr 5.4rem}}
 @media print{body{background:#fff}.reveal{display:none}.answer{display:block}.card,.quiz,.cols{break-inside:avoid}}
 
 /* ---- style-guide chrome (NOT part of the reusable style) ---------------- */
@@ -215,8 +215,8 @@ input[type=range]{accent-color:var(--accent);width:100%}
     <p class="kicker">LLM Architecture &middot; <span class="accent">Tier 2 — Build craft</span> &middot; Lesson 03</p>
     <h1>Retrieval-augmented generation</h1>
     <p class="sub">One idea, taught to the point you can defend it in a design review.</p>
-    <p class="lead">A <span class="badge">lead</span> paragraph sets up the idea — a model's <em class="term">weights</em> are hazy long-term memory, the <em class="term">context window</em> is working memory at full fidelity — with an inline <code>code</code> token.</p>
-    <h2>A section header (h2 · ~19px)</h2>
+    <p class="lead">A lead paragraph sets up the idea — a model's <em class="term">weights</em> are hazy long-term memory, the <em class="term">context window</em> is working memory at full fidelity — with an inline <code>code</code> token.</p>
+    <h2><span class="badge">Idea</span> A section header with a phase badge</h2>
     <h3>A subsection (h3 · ~17px)</h3>
     <p>Body text at the reading size (~15px), with a <em class="term">key term</em> in the accent. <span class="small">Small print and captions sit in muted grey.</span></p>
   </div>
@@ -281,10 +281,10 @@ input[type=range]{accent-color:var(--accent);width:100%}
   <div class="sg-cell">
     <p class="sg-cap"><b>Where you are</b> — topic &middot; meter &middot; status. Solid (green) · Developing (accent) · Shaky (amber) · Not started (neutral).</p>
     <div class="dash">
-      <div class="row"><span class="t">Mechanics</span><span class="meter"><i class="fill-good" style="width:100%"></i></span><span class="pill p-solid">Solid</span></div>
-      <div class="row"><span class="t">Retrieval</span><span class="meter"><i class="fill-acc" style="width:60%"></i></span><span class="pill p-dev">Developing</span></div>
-      <div class="row"><span class="t">Evaluation</span><span class="meter"><i class="fill-warn" style="width:38%"></i></span><span class="pill p-shaky">Shaky</span></div>
-      <div class="row"><span class="t">Open debates</span><span class="meter"><i class="fill-none" style="width:0%"></i></span><span class="pill p-none">Not started</span></div>
+      <div class="row"><span class="t"><span class="cid">M1</span> Pretraining</span><span class="meter"><i class="fill-good" style="width:100%"></i></span><span class="pill p-solid">Solid</span></div>
+      <div class="row"><span class="t"><span class="cid">C1</span> Context engineering</span><span class="meter"><i class="fill-acc" style="width:60%"></i></span><span class="pill p-dev">Developing</span></div>
+      <div class="row"><span class="t"><span class="cid">C6</span> Evals &amp; judge</span><span class="meter"><i class="fill-warn" style="width:30%"></i></span><span class="pill p-shaky">Shaky</span></div>
+      <div class="row"><span class="t"><span class="cid">D2</span> Generalization gap</span><span class="meter"><i class="fill-none" style="width:0%"></i></span><span class="pill p-none">Not started</span></div>
     </div>
   </div>
 

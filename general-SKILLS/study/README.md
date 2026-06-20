@@ -12,16 +12,16 @@ Each subject gets its own directory:
 
 ```
 curricula/<subject-slug>/
-  00-GOAL.md        # why you're learning this, and what success looks like
-  00-RESOURCES.md   # curated trusted sources + practice communities
-  00-PROFILE.md     # your preferences and the tutor's working notes
-  01-lessons/       # numbered, self-contained interactive HTML lessons
-  02-progress/      # short dated records of what you can now demonstrably do
-  03-references/    # distilled glossaries, syntax cards, routines for quick lookup
-  00-DASHBOARD.html # optional progress map of the subject (solid / developing / shaky)
+  00-GOAL.md         # why you're learning this, and what success looks like
+  00-PROFILE.md      # your preferences and the tutor's working notes
+  00-DASHBOARD.html  # live projection of the curriculum (solid / developing / shaky / not started)
+  01-lessons/        # numbered, self-contained interactive HTML lessons
+  02-progress/       # short dated records of what you can now demonstrably do
+  03-references/     # distilled glossaries, syntax cards, routines for quick lookup
+  04-resources/      # sources you learn from + the curriculum <subject-slug>.md (the concept map)
 ```
 
-On every session the tutor reads this state first, so a returning learner is recognized rather than re-onboarded. It teaches at your *learning edge* – the floor comes from what you've already proven (`02-progress/`), the direction from your `00-GOAL.md` – and uses spaced review to keep it from fading. Once a subject has a few progress records, the tutor can regenerate `00-DASHBOARD.html`: an at-a-glance map of every topic as solid, developing, shaky, or not started.
+On every session the tutor reads this state first, so a returning learner is recognized rather than re-onboarded. For all but the narrowest subjects it first lays out a **curriculum** (`04-resources/<subject-slug>.md`) – a source-grounded map of what to learn and in what order – then teaches at your *learning edge*, taking the next step from that map and the floor of what you've already proven (`02-progress/`), with spaced review to keep it from fading. `00-DASHBOARD.html` renders the curriculum as an at-a-glance map of every concept as solid, developing, shaky, or not started, and updates as you make progress.
 
 ## Bundled starter curricula
 
@@ -35,7 +35,7 @@ One is a map of ideas, the other two are ladders of abilities (a classic skill, 
 
 ## Reference formats
 
-The conventions the tutor follows for each workspace file live in [`references/`](./references): [`goal-format.md`](./references/goal-format.md), [`resources-format.md`](./references/resources-format.md), and [`progress-format.md`](./references/progress-format.md).
+The conventions the tutor follows for each workspace file live in [`references/`](./references): [`goal-format.md`](./references/goal-format.md), [`curriculum-format.md`](./references/curriculum-format.md), [`resources-format.md`](./references/resources-format.md), and [`progress-format.md`](./references/progress-format.md). How a lesson picks its in-lesson interaction – by subject type – lives in [`lesson-design.md`](./references/lesson-design.md), and the dashboard's required shape – led by an overall-progress summary – in [`dashboard-format.md`](./references/dashboard-format.md).
 
 ## Install
 
@@ -48,4 +48,4 @@ No build step is required – a skill is just `SKILL.md` (YAML frontmatter + ins
 
 ## License
 
-Licensed under the [Apache License, Version 2.0](../LICENSE).
+Licensed under the [Apache License, Version 2.0](../../LICENSE).

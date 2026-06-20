@@ -9,7 +9,7 @@
       "name": "study",
       "source": "./",
       "strict": false,
-      "skills": ["./general/study"],
+      "skills": ["./general-SKILLS/study"],
       "description": "A personal tutor that helps you learn a subject deeply across many sessions, building a persistent workspace (goal, sources, interactive lessons, progress records, cheat sheets) so learning compounds instead of restarting each time.",
       "license": "Apache-2.0",
       "author": {
@@ -20,8 +20,30 @@
       "name": "cross-examine",
       "source": "./",
       "strict": false,
-      "skills": ["./general/cross-examine"],
+      "skills": ["./general-SKILLS/cross-examine"],
       "description": "Interrogates you one question at a time to pressure-test a plan or design, surfacing blind spots and hidden assumptions, then compiles a consolidated plan.",
+      "license": "Apache-2.0",
+      "author": {
+        "name": "flownrt"
+      }
+    },
+    {
+      "name": "red-team",
+      "source": "./",
+      "strict": false,
+      "skills": ["./general-SKILLS/red-team"],
+      "description": "Builds the strongest case against a position – a fair steelman of the target, the most damaging objections ranked by severity, and the best defense it can still mount. Works on your own thinking or someone else's.",
+      "license": "Apache-2.0",
+      "author": {
+        "name": "flownrt"
+      }
+    },
+    {
+      "name": "scope-it",
+      "source": "./",
+      "strict": false,
+      "skills": ["./general-SKILLS/scope-it"],
+      "description": "Turns a vague request into a concrete spec in one pass – goal, scope, non-goals, and acceptance criteria – with assumptions made explicit and the blocking unknowns pulled to the top as open questions.",
       "license": "Apache-2.0",
       "author": {
         "name": "flownrt"
@@ -31,7 +53,7 @@
       "name": "session-brief",
       "source": "./",
       "strict": false,
-      "skills": ["./general/session-brief"],
+      "skills": ["./general-SKILLS/session-brief"],
       "description": "Distills the current session into a copy-pasteable continuation prompt so a fresh session can resume the work without re-explaining it.",
       "license": "Apache-2.0",
       "author": {
