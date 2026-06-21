@@ -3,3 +3,4 @@
 *.skill
 .leak-tokens
 CLAUDE.md
+tools/

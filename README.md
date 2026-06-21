@@ -38,10 +38,7 @@ Without commands:
 }
 ```
 
-**2. By hand.** Clone the repo (`git clone …`) or download the ZIP, then:
-
-- **Cowork** – download a skill's prebuilt bundle (`<skill>.skill`) from the [latest release](https://github.com/flownrt/git-SKILLS/releases/latest), then Customize → Personal plugins → + → Create plugin → Upload plugin. (Or build it yourself: `cd general-SKILLS && zip -r study.skill study`.)
-- **Claude Code** – copy a skill's folder into `~/.claude/skills/` (every project) or a project's `.claude/skills/` (that project only). Picked up the same session, no restart.
+**2. By hand (Claude Code).** Clone the repo (`git clone …`) or download the ZIP, then copy a skill's folder into `~/.claude/skills/` (every project) or a project's `.claude/skills/` (that project only). Picked up the same session, no restart. (In Cowork, use the marketplace above.)
 
 Once installed, the agent triggers a skill automatically when your request matches its description, or you can invoke it by name.
 
