@@ -1,0 +1,11 @@
+#!/bin/sh
+# Rebuild dist/*.skill from the skill sources on every commit, so the bundles
+# never drift from the source folders.
+#
+# dist/*.skill is gitignored, so this refreshes your LOCAL build artifacts; it
+# does not add them to the commit. A build failure never blocks the commit.
+#
+# Activate once with:   git config core.hooksPath tools/hooks
+ROOT="$(git rev-parse --show-toplevel)"
+python3 "$ROOT/tools/build-dist.py" || echo "pre-commit: bundle rebuild failed (commit continues)" >&2
+exit 0

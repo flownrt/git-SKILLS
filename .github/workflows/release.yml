@@ -1,0 +1,36 @@
+name: Release skill bundles
+
+# When you push a version tag (e.g. v0.1.0), build the .skill bundles from the
+# skill sources and attach them to that tag's GitHub Release as downloadable
+# assets. The bundles stay gitignored build artifacts — they live only on the
+# Release, never in the working tree.
+#
+# Cut a release:  git tag v0.1.0 && git push origin v0.1.0
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  bundles:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Build .skill bundles
+        run: python tools/build-dist.py
+
+      - name: Attach bundles to the release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.skill
