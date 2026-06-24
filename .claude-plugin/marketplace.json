@@ -59,6 +59,28 @@
       "author": {
         "name": "flownrt"
       }
+    },
+    {
+      "name": "improve-prompt",
+      "source": "./",
+      "strict": false,
+      "skills": ["./general-SKILLS/improve-prompt"],
+      "description": "Rewrites a rough or underperforming prompt into a stronger, copy-pasteable version – pulling the task to the front, filling the structural gaps, resolving contradictions – then explains what changed and flags the gaps only you can fill.",
+      "license": "Apache-2.0",
+      "author": {
+        "name": "flownrt"
+      }
+    },
+    {
+      "name": "workflow-architect",
+      "source": "./",
+      "strict": false,
+      "skills": ["./general-SKILLS/workflow-architect"],
+      "description": "Designs closed-loop agent workflows as a reviewable spec before any agent runs – the definition of done, the wired org chart, the loop, the guardrails, and the handoff – right-sized to the task. Works on a new goal or audits and improves an existing workflow.",
+      "license": "Apache-2.0",
+      "author": {
+        "name": "flownrt"
+      }
     }
   ]
 }
