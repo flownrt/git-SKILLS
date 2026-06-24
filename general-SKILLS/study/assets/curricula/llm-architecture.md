@@ -17,6 +17,7 @@ This is a tiered map of the concepts that let you hold your own when people argu
 | `[DOC]` | Official lab documentation (Anthropic, OpenAI, Google DeepMind) – e.g. prompt caching, context engineering, building agents |
 | `[KAR]` | Andrej Karpathy – *Neural Networks: Zero to Hero*, *Deep Dive into LLMs*, public talks |
 | `[EXP]` | Practitioner explainers – Cameron R. Wolfe, Maarten Grootendorst's visual guides |
+| `[SCALE]` | *How to Scale Your Model* (jax-ml) – systems view of scaling, batching, and the roofline |
 | `[INT]` | First-hand interviews with frontier builders (research, inference, hardware) |
 | `[GEN]` | General, widely-held engineering practice |
 
@@ -33,7 +34,7 @@ A base model is made by predicting the next token across an enormous corpus of t
 Models don't see characters or words; they see **tokens** – subword chunks, very roughly three-quarters of an English word each. Three consequences you'll use constantly: pricing and context limits are counted in tokens; non-English text and dense boilerplate tokenize less efficiently (so they cost more and fill the window faster); and character-level tasks (counting letters, exact string surgery) are unreliable because the model literally can't see the characters. The token is the unit of cost, latency, and capacity in every later discussion.
 
 ### M3 · The transformer and attention `[ATT][ATTS]`
-The transformer moves tokens through stacked layers of **attention** (each token can look back at every earlier token) and feed-forward blocks, glued together by residual connections. You don't need to derive backpropagation, but you should be able to say where the cost lives: attention compute grows *quadratically* with sequence length, while the per-token memory you must retain grows *linearly*. That asymmetry is the seed of nearly every long-context and inference-cost problem downstream.
+The transformer moves tokens through stacked layers of **attention** (each token can look back at every earlier token) and feed-forward blocks, glued together by residual connections. Attention itself is order-blind – it sees a *set* of tokens, not a sequence – so position has to be injected explicitly, first through added **positional encodings** and in modern models through **rotary embeddings (RoPE)** applied inside attention. You don't need to derive backpropagation, but you should be able to say where the cost lives: attention compute grows *quadratically* with sequence length, while the per-token memory you must retain grows *linearly*. That asymmetry is the seed of nearly every long-context and inference-cost problem downstream.
 
 ### M4 · Context window and the KV cache `[KAR][INFE]`
 The cleanest mental model: the **weights** are long-term memory – everything the model absorbed in training, recalled hazily; the **context window** is working memory – whatever is in front of it right now, available at full fidelity. The **KV cache** is the physical implementation of working memory: the per-token state kept around so the model doesn't recompute the whole context for each new token. Because each conversation's cache is unique, it can't be shared across users, which makes it the hard bottleneck of long context. This one idea is why putting the right material *in the context* usually beats hoping the weights "know" it.
@@ -84,7 +85,7 @@ The practice that separates engineering from vibes: curated datasets, expected o
 ### C7 · Prefill vs. decode, prompt caching, and latency `[INFE][DOC]`
 Inference has two phases. **Prefill** processes the input in parallel and is compute-bound; **decode** generates output one token at a time and is memory-bandwidth-bound. This is why output tokens cost several times more than input tokens and why long outputs dominate latency. **Prompt caching** stores the KV cache of a stable prefix (system prompt, instructions, fixed documents) so repeat calls skip re-processing it – typically large cost and latency savings, with cache lifetimes from minutes to about an hour. The design rule that falls out: put stable content first, volatile content last.
 
-### C8 · Inference economics and batching `[INFE][INT]`
+### C8 · Inference economics and batching `[INFE][INT][SCALE]`
 Without batching many users' requests together, serving economics are dramatically worse – often by orders of magnitude – because the cost of fetching the weights from memory gets amortized across a batch only when the batch is large. This is why providers can offer steep discounts for asynchronous/batch APIs (they fill idle batch capacity) and why hard latency floors exist no matter how much you're willing to pay. Fluency: you can explain the link between batch size, throughput, and cost per token.
 
 ### C9 · The adaptation decision: prompt → RAG → fine-tune `[GEN][INT]`
@@ -124,7 +125,7 @@ The sharpest version: the most consequential reward hacking is done by *research
 ### D5 · Synthetic data and model collapse `[KAR][EXP]`
 Training heavily on model-generated data tends to quietly lose diversity – outputs collapse toward the model's favorite modes and turn into bland "slop," because humans are noisier but unbiased sources of entropy. This caps naive self-improvement loops (train on your own outputs, degrade) and is a reason for skepticism about agents bootstrapping their own "culture." The same drift shows up at workflow scale: pipelines that feed model output back into model input wander off without fresh grounding or a human anchor.
 
-### D6 · Memory bandwidth as the real constraint `[INFE][SYS]`
+### D6 · Memory bandwidth as the real constraint `[INFE][SYS][SCALE]`
 A systems thesis worth knowing: serving frontier models is bottlenecked by **memory bandwidth, not raw compute**. A simple roofline view – time is the max of memory time and compute time – governs almost everything: batch sizes, MoE design, why context lengths plateaued, and the structure of API pricing. People even reverse-engineer lab internals from public prices. The payoff: when someone asks "why is output five times the price of input?" or "why did context lengths stop growing?", this is the answer.
 
 ### D7 · Physical ceilings: fabs, memory, and power `[INT]`

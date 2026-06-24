@@ -1,6 +1,6 @@
 ---
 name: cross-examine
-description: Interrogate the user one question at a time to pressure-test a plan, design, or decision – surfacing the blind spots and hidden assumptions in their reasoning, then compiling a consolidated plan at the end. Use when the user wants to stress-test or be grilled on a plan or design, or says things like "cross-examine me", "poke holes in this", "find my blind spots", "challenge my reasoning", or "interrogate this plan". This is the deliberate opposite of the normal mode where you bundle several clarifying questions at once and move on. Do NOT use for that routine, batched clarification, or when the user wants the plan executed rather than challenged.
+description: Interrogate the user one question at a time to pressure-test a plan, design, or decision – surfacing the blind spots and hidden assumptions in their reasoning, then compiling a consolidated plan at the end. Use when the user wants to stress-test or be grilled on a plan or design, or says things like "cross-examine me", "poke holes in this", "find my blind spots", "challenge my reasoning", or "interrogate this plan". This is the deliberate opposite of the normal mode where you bundle several clarifying questions at once and move on. Do NOT use for that routine, batched clarification, or when the user wants the plan executed rather than challenged. Works best with scope-it and red-team.
 ---
 
 # Cross-Examine
